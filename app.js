@@ -14,6 +14,20 @@ const passport = require('passport')
 const flash = require('connect-flash')
 
 mongoose.Promise = Promise;
+
+// var MongoClient = require('mongodb').MongoClient;
+
+// // mongodb+srv://clusterOwner:<PASSWORD>@cluster0-lvupx.mongodb.net/test?retryWrites=true
+// var uri = "mongodb+srv://clusterOwner:!File45type@cluster0-lvupx.mongodb.net/test?retryWrites=true";
+// MongoClient.connect(uri, { useNewUrlParser: true }, function(err, client) {
+//    const collection = client.db("test").collection("devices");
+//    // perform actions on the collection object
+//    client.close();
+// });
+
+
+
+
 mongoose
   .connect('mongodb://localhost/lab-passport-roles', {useMongoClient: true})
   .then(() => {
