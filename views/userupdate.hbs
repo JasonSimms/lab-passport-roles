@@ -3,12 +3,12 @@
     <div class="card">
         <h1>Update your own info</h1>
 
-        <form action="/userupdate" method='POST'>
+        <form action="/updateuser" method='POST'>
             EMail: <input type="email" name='email' required='true' value={{user.email}}>
             <br>
             Password:<input type="password" name='password' required='true' value={{user.password}}>
             <br>
-            ROLE:<input type="text" name='user' required='true' value={{user.role}}>
+            ROLE:<input type="text" name='role' required='true' value={{user.role}}>
             <br>
             <button type='submit'>Update my Account</button>
             <br>

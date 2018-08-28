@@ -6,24 +6,34 @@ mongoose.connect(`mongodb://localhost/${dbName}`);
 
 const users = [
   {
-    email: "boss@boss.com",
+    email: "boss2@boss.com",
     password: "123",
     role: "Boss"
   },
   {
-    email: "boss@boss.com",
+    email: "boss3@boss.com",
     password: "123",
     role: "Boss"
   },
   {
-    email: "boss@boss.com",
+    email: "user2.com",
     password: "123",
-    role: "Boss"
+    role: "TA"
   },
   {
-    email: "boss@boss.com",
+    email: "user3.com",
     password: "123",
-    role: "Boss"
+    role: "TA"
+  },
+  {
+    email: "user4.com",
+    password: "123",
+    role: "Developer"
+  },
+  {
+    email: "user5.com",
+    password: "123",
+    role: "Developer"
   },
 ];
 
