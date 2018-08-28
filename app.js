@@ -1,14 +1,17 @@
 require('dotenv').config();
 
-const bodyParser   = require('body-parser');
-const cookieParser = require('cookie-parser');
-const express      = require('express');
-const favicon      = require('serve-favicon');
-const hbs          = require('hbs');
-const mongoose     = require('mongoose');
-const logger       = require('morgan');
-const path         = require('path');
-
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
+const express = require('express')
+const favicon = require('serve-favicon')
+const hbs = require('hbs')
+const mongoose = require('mongoose')
+const logger = require('morgan')
+const path = require('path')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const passport = require('passport')
+const flash = require('connect-flash')
 
 mongoose.Promise = Promise;
 mongoose
@@ -29,6 +32,20 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(
+  session({
+      secret: 'our-passport-local-strategy-app',
+      resave: true,
+      saveUninitialized: true,
+      store: new MongoStore({ mongooseConnection: mongoose.connection, ttl: 99999999999 }),
+  })
+)
+
+require('./utils/passport')
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Express View engine setup
 
@@ -56,5 +73,8 @@ app.use('/', index);
 
 const boss = require('./routes/boss');
 app.use('/', boss);
+
+// const protectedRoutes = require('./routes/protected')
+// app.use('/protected', protectedRoutes)
 
 module.exports = app;
