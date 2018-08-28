@@ -1,0 +1,19 @@
+<div class="container">
+
+    <div class="card">
+        <h1>BOSS: DELETE EMPLOYEE</h1>
+
+        <form action="/boss/delete" method='POST'>
+            EMail: <input type="email" name='email' required='true'>
+            <br>
+        
+            <button type='submit'>Delete User with this Email</button>
+            <br>
+            <br> {{#if error}}
+            <p>ERROR: {{error}}</p>
+            {{/if}}
+        </form>
+
+        <a href="/auth/google"><button>Sign up with Google</button></a>
+    </div>
+</div>

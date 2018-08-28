@@ -1,0 +1,22 @@
+<div class="container">
+
+    <div class="card">
+        <h1>BOSS: CREATE EMPLOYEE</h1>
+
+        <form action="/boss/create" method='POST'>
+            EMail: <input type="email" name='email' required='true'>
+            <br>
+            Password:<input type="password" name='password' required='true'>
+            <br>
+            ROLE:<input type="text" name='role' required='true'>
+            <br>
+            <button type='submit'>Create my User Account</button>
+            <br>
+            <br> {{#if error}}
+            <p>ERROR: {{error}}</p>
+            {{/if}}
+        </form>
+
+        <a href="/auth/google"><button>Sign up with Google</button></a>
+    </div>
+</div>
