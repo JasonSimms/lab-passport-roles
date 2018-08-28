@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-<a href="/">HOME</a>
-<a href='/users'>View ALl users</a>
-<a href="/Boss">Bosspage</a>
-<a href="/Boss/delete">Delete Employee</a>
+
+<head>
+  <title>{{title}}</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <nav>
 
 
+    <a href="/"><button>Home</button></a>
+    <a href='/users'><button>All users</button> </a>
+    <a href='/updateuser'><button>Update your info</button></a>
+    <a href="/Boss"><button>Boss: Create</button></a>
+    <a href="/Boss/delete"><button>Boss: Delete Employee</button></a>
 
-    {{{body}}}
+  </nav>
 
-    <script src='/javascripts/script.js'></script>
-  </body>
+
+  {{{body}}}
+
+  <script src='/javascripts/script.js'></script>
+</body>
+
 </html>

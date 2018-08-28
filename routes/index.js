@@ -59,12 +59,13 @@ router.get('/users', (req, res, next) => {
 
 
 
-router.get('/updateuser/:id', (req, res) => {
-    const { id } = req.params
-    console.log(req.params,'------------------------')
-    // Book.findById(id).then(book => {
-    //     res.render('update-book', { book })
+router.get('/updateuser', (req, res) => {
+    // const { id } = req.params
+    console.log(req.user._id,'------------------------')
+    User.findById(req.user._id).then(user => {
+        res.render('userupdate', { user })
     // })
+})
 })
 
 router.post('/updateuser/:id', (req, res) => {

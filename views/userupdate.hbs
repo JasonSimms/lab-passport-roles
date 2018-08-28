@@ -1,22 +1,22 @@
 <div class="container">
 
     <div class="card">
-        <h1>Sign Up</h1>
+        <h1>Update your own info</h1>
 
-        <form action="/sign-up" method='POST'>
-            EMail: <input type="email" name='email' required='true'>
+        <form action="/userupdate" method='POST'>
+            EMail: <input type="email" name='email' required='true' value={{user.email}}>
             <br>
-            Password:<input type="password" name='password' required='true'>
+            Password:<input type="password" name='password' required='true' value={{user.password}}>
             <br>
-            ROLE:<input type="text" name='user' required='true'>
+            ROLE:<input type="text" name='user' required='true' value={{user.role}}>
             <br>
-            <button type='submit'>Create my User Account</button>
+            <button type='submit'>Update my Account</button>
             <br>
             <br> {{#if error}}
             <p>ERROR: {{error}}</p>
             {{/if}}
         </form>
 
-        <a href="/auth/google"><button>Sign up with Google</button></a>
+        {{!-- <a href="/auth/google"><button>Sign up with Google</button></a> --}}
     </div>
 </div>
