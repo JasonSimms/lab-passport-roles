@@ -54,5 +54,7 @@ app.locals.title = 'Passport Roles by Sean & Jason';
 const index = require('./routes/index');
 app.use('/', index);
 
+const boss = require('./routes/boss');
+app.use('/', boss);
 
 module.exports = app;
