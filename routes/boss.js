@@ -58,7 +58,7 @@ boss.post("/boss/delete", (req, res, next) => {
   User.findOneAndRemove(
     {email: req.body.email}).then(data => {
         console.log(data, '-----beeeppppp---')
-    //   res.redirect("/");
+      res.redirect('/boss/delete')
     })
   });
 

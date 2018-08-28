@@ -4,6 +4,8 @@ const User = require('../models/User')
 const bcrypt = require('bcrypt')
 // const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy
 // const config = require('../config')
+const flash = require('connect-flash')
+
 
 passport.serializeUser((user, cb) => {
     cb(null, user._id)

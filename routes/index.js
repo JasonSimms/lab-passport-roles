@@ -2,6 +2,7 @@ const express = require('express')
 const router = express.Router()
 const bcrypt = require('bcrypt')
 const passport = require('passport')
+const ensureLogin = require('connect-ensure-login')
 
 const User = require('../models/User')
 
@@ -45,6 +46,44 @@ router.post(
     })
 )
 
+router.use(ensureLogin.ensureLoggedIn('/sign-in'))
+// VIEW ALL USERS
+router.get('/users', (req, res, next) => {
+    User.find({})
+    .then(users => {
+        res.send(users)
+    })
+})
+
+//UPDATE USER INFO
+
+
+
+router.get('/updateuser/:id', (req, res) => {
+    const { id } = req.params
+    console.log(req.params,'------------------------')
+    // Book.findById(id).then(book => {
+    //     res.render('update-book', { book })
+    // })
+})
+
+router.post('/updateuser/:id', (req, res) => {
+    const { id } = req.params
+
+    const {
+        email, password, role
+    } = req.body
+
+    Book.findByIdAndUpdate(
+        id,
+        {
+            email, password, role
+        },
+        { new: true }
+    ).then(result => {
+        res.render('/users', { result, updated: true })
+    })
+})
 // router.get(
 //     '/google',
 //     passport.authenticate('google', {

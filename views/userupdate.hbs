@@ -1,14 +1,16 @@
 <div class="container">
 
     <div class="card">
-        <h1>BOSS: DELETE EMPLOYEE</h1>
-{{!-- {{#if deleted}}<h2>User DELETED, FIRE SOMEONE ELSE</h2>
-{{/if}} --}}
-        <form action="/boss/delete" method='POST'>
+        <h1>Sign Up</h1>
+
+        <form action="/sign-up" method='POST'>
             EMail: <input type="email" name='email' required='true'>
             <br>
-        
-            <button type='submit'>Delete User with this Email</button>
+            Password:<input type="password" name='password' required='true'>
+            <br>
+            ROLE:<input type="text" name='user' required='true'>
+            <br>
+            <button type='submit'>Create my User Account</button>
             <br>
             <br> {{#if error}}
             <p>ERROR: {{error}}</p>

@@ -9,7 +9,22 @@ const users = [
     email: "boss@boss.com",
     password: "123",
     role: "Boss"
-  }
+  },
+  {
+    email: "boss@boss.com",
+    password: "123",
+    role: "Boss"
+  },
+  {
+    email: "boss@boss.com",
+    password: "123",
+    role: "Boss"
+  },
+  {
+    email: "boss@boss.com",
+    password: "123",
+    role: "Boss"
+  },
 ];
 
 user.create(users, err => {
